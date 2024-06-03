@@ -1,20 +1,15 @@
-## Requirements
+# Requirements
 Install Anaconda to run this script: https://docs.anaconda.com/anaconda/install/
 
-## Quick Start
+# Quick Start
+## Mac OS
+1. Install Anaconda: https://docs.anaconda.com/anaconda/install/
+2. Double click `run.command` file to run the python script
 
-# Mac OS
-1. Install Anaconda: https://docs.anaconda.com/anaconda/install/.
-2. Double click `run.command` file to run the python script.
-
-# Linux
-1. Install Anaconda: https://docs.anaconda.com/anaconda/install/.
-2. Run:
-```chmod +x run.sh```
-to make the shell script executable.
-3. Run:
-```run.sh```
-execute the python script.
+## Linux
+1. Install Anaconda: https://docs.anaconda.com/anaconda/install/
+2. Run `chmod +x run.sh` to make the shell script executable
+3. Run `run.sh` to execute the python script
 
 ## Codecs
 
