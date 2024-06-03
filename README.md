@@ -1,3 +1,9 @@
+# YouTube Video Downloader
+Uses [YT-DLP](https://github.com/yt-dlp/yt-dlp) under the hood.
+Just enter in a YouTube video URL and download it.
+
+Allows you to select the resolution and codec you want to download. (If unsure, just press enter to default to best quality).
+
 # Requirements
 Install Anaconda to run this script: https://docs.anaconda.com/anaconda/install/
 
