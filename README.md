@@ -11,7 +11,7 @@ Install Anaconda to run this script: https://docs.anaconda.com/anaconda/install/
 2. Run `chmod +x run.sh` to make the shell script executable
 3. Run `run.sh` to execute the python script
 
-## Codecs
+# Codecs
 
 AVC1 (aka. H.264) - Low Efficiency, Highest Bitrate
 
