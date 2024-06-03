@@ -4,6 +4,8 @@ Just enter in a YouTube video URL and download it.
 
 Allows you to select the resolution and codec you want to download. (If unsure, just press enter to default to best quality).
 
+Downloads in mp4 format to the same directory as the script.
+
 # Requirements
 Install Anaconda to run this script: https://docs.anaconda.com/anaconda/install/
 
