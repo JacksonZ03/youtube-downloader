@@ -5,6 +5,27 @@ set -e # Exit if anything fails
 # Change working directory to the directory where the script is located
 cd "$(dirname "$0")"
 
+## Conda setup
+# Path to your .conda environment folder (assuming it's in the same directory as this script)
+CONDA_ENV_PATH="./.conda"
+
+# Add conda-forge channel to the conda environment if not already present
+if ! conda config --show channels | grep -q "conda-forge"; then
+    # Add the conda-forge channel
+    conda config --add channels conda-forge
+    echo "The conda-forge channel has been added."
+fi
+
+# Activate the conda environment
+if [ ! -d "./.conda" ]; then
+    conda env create --prefix ./.conda --file environment.yml
+    echo "*" >> ./.conda/.gitignore # Add "*" to .gitignore so it doesn't mess up source control in vscode
+fi
+
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate "$CONDA_ENV_PATH"
+
+
 # Prompt the user for audio or video download
 echo "Select download option:"
 echo "1. Audio"
@@ -21,13 +42,6 @@ else
     echo "Invalid option. Exiting..."
     exit 1
 fi
-
-# Path to your .conda environment folder (assuming it's in the same directory as this script)
-CONDA_ENV_PATH="./.conda"
-
-# Activate the conda environment
-source "$(conda info --base)/etc/profile.d/conda.sh"
-conda activate "$CONDA_ENV_PATH"
 
 # Run the Python script
 python "$PYTHON_SCRIPT"
