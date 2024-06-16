@@ -8,30 +8,30 @@ The python scripts will create a `download` folder (if it doesn't already exist)
 # Requirements
 [Install Miniconda](https://docs.anaconda.com/free/miniconda/miniconda-install/) to run this script.
 
->*This script will add conda-forge channel to your Miniconda installation if it doesn't already exist. The script will not re-order existing conda-forge channel if it already exists.*
+> *This script will add conda-forge channel to your Miniconda installation if it doesn't already exist. The script will not re-order existing conda-forge channel if it already exists.*
 
 # Quick Start
 ## Mac OS
 1. [Install Miniconda](https://docs.anaconda.com/free/miniconda/miniconda-install/)
 2. Double click `run.command` file to run the python script
-3. Pick either "1. Audio" or "2. Video"
+3. Pick either `1. Audio`[^1] or `2. Video`
 4. Enter in the YouTube video URL to download
 
 ## Linux
 1. [Install Miniconda](https://docs.anaconda.com/free/miniconda/miniconda-install/)
 2. Run `chmod +x run.sh` to make the shell script executable
 3. Run `run.sh` to execute the python script
-4. Pick either "1. Audio" or "2. Video"
+4. Pick either `1. Audio`[^1] or `2. Video`
 5. Enter in the YouTube video URL to download
+
 
 # Codecs
 
-AVC1 (aka. H.264) - Low Efficiency, Highest Bitrate
+|    Video Codec    | Efficiency   | Bitrate                                   |
+| ----------------- | ------------ | ----------------------------------------- |
+| AVC1 (aka. H.264) | Low          | Highest                                   |
+| VP9 (Recommended) | Excellent    | Average (20-35% more efficient than AVC1) |
+| AV01              | High         | Lowest (20% more efficient than VP9)      |
 
-VP9 - Execelent Efficiency, Average Bitrate (20-35% more efficient than AVC1) - Recommended
 
-AV01 - High Efficiency, Lowest Bitrate (20% more efficient than VP9)
-
----
-
-Selecting audio downloads to mp3 format at the highest quality.
+[^1]: Selecting `1. Audio` downloads to mp3 format at the highest quality.
