@@ -1,5 +1,6 @@
 import yt_dlp
 import os
+import uuid
 
 def get_video_formats(url):
     ydl_opts = {}
@@ -59,9 +60,10 @@ def select_codec(resolutions, selected_resolution):
 
 def download_video(url, video_format_code):
     script_dir = os.path.dirname(os.path.abspath(__file__))
+    unique_id = str(uuid.uuid4())[:8]  # Generate a short UUID (first 8 characters)
     ydl_opts = {
         'format': f"{video_format_code}+bestaudio/best",
-        'outtmpl': os.path.join(script_dir, '%(title)s.%(ext)s'),
+        'outtmpl': os.path.join(script_dir, '%(title)s_' + unique_id + '.%(ext)s'),
         'merge_output_format': 'mp4',
     }
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
