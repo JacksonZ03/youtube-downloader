@@ -2,12 +2,15 @@ import yt_dlp
 import os
 import uuid
 
+project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__))) # Assumes that this file is in <project_dir>/src
+download_dir = os.path.join(project_dir, 'download')
+os.makedirs(download_dir, exist_ok=True)  # Create the download directory if it doesn't exist
+
 def download_best_audio(url):
-    script_dir = os.path.dirname(os.path.abspath(__file__))
     unique_id = str(uuid.uuid4())[:8]  # Generate a short UUID (first 8 characters)
     ydl_opts = {
         'format': 'bestaudio/best',
-        'outtmpl': os.path.join(script_dir, '%(title)s_' + unique_id + '.%(ext)s'),
+        'outtmpl': os.path.join(download_dir, '%(title)s_' + unique_id + '.%(ext)s'),
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',

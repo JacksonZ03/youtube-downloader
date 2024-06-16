@@ -18,7 +18,7 @@ fi
 
 # Activate the conda environment
 if [ ! -d "./.conda" ]; then
-    conda env create --prefix ./.conda --file environment.yml
+    conda env create --prefix ./.conda --file ./src/environment.yml
     echo "*" >> ./.conda/.gitignore # Add "*" to .gitignore so it doesn't mess up source control in vscode
 fi
 
@@ -35,9 +35,9 @@ DOWNLOAD_OPTION=${REPLY:-2}
 
 # Determine which Python script to run based on the user's choice
 if [ "$DOWNLOAD_OPTION" == "1" ]; then
-    PYTHON_SCRIPT="./audio-download.py"
+    PYTHON_SCRIPT="./src/audio-download.py"
 elif [ "$DOWNLOAD_OPTION" == "2" ]; then
-    PYTHON_SCRIPT="./video-download.py"
+    PYTHON_SCRIPT="./src/video-download.py"
 else
     echo "Invalid option. Exiting..."
     exit 1
