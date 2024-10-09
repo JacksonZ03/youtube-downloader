@@ -19,7 +19,7 @@ while true; do
     fi
 
     # Validate URL
-    if [[ $url =~ ^https?://(www\.)?youtube\.com/watch\?v=[a-zA-Z0-9_-]{11}$ ]] || [[ $url =~ ^https?://youtu\.be/[a-zA-Z0-9_-]{11}$ ]]; then
+    if [[ $url =~ ^https?://(www\.)?youtube\.com/watch\?v=[a-zA-Z0-9_-]{11}(&.*)?$ ]] || [[ $url =~ ^https?://youtu\.be/[a-zA-Z0-9_-]{11}(\?.*)?$ ]]; then
         echo "Valid YouTube URL. Downloading thumbnail..."
         
         # Download thumbnail to the current directory
